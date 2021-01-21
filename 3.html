@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Slidebar */
+        .nav {
+            background-color: #111111;
+            height: 100%;
+            width: 24%;
+            /* border: 2px solid red; */
+            position: fixed;
+            top: 0;
+            left: 0;
+            /* z-index: 1; */
+            float: left;
+            /* clear: both; */
+            /* display: flex; */
+            /* display: block; */
+            flex-direction: column;
+
+        }
+
+        .logo {
+            /* display: block; */
+            height: 250px;
+            /* left: 0;
+            width: 100%; */
+            /* border: 2px solid green; */
+            /* position: fixed; */
+            top: 0;
+        }
+
+        .logo .container {
+
+            height: 250px;
+            /* text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: flex; */
+            /* margin-left: auto;
+            margin-right: auto; */
+            /* display: block; */
+            text-align: center;
+            /* padding: 24%; */
+        }
+
+        a.under {
+            text-decoration: none;
+            font-size: 30px;
+            color: #ffffff;
+        }
+
+
+
+        .nav .buttons {
+            /* display: block; */
+            height: 390px;
+            /* width: 100%; */
+            /* border: 2px solid blue; */
+            /* position: fixed; */
+        }
+
+        /* Pages Part */
+        .pages .container {
+            display: block;
+            height: 100%;
+            width: 76%;
+            position: absolute;
+            /* position: fixed; */
+            /* z-index: 1; */
+            top: 0;
+            right: 0;
+            /* float: right; */
+            /* border: 2px solid brown;     */
+        }
+
+        .listmenu {
+            text-decoration: none;
+            text-align: center;
+            list-style: none;
+            font-size: 20px;
+            line-height: 3;
+        }
+
+        .listmenu li a {
+            text-decoration: none;
+            color: #d3d3d3;
+        }
+
+        div.pic{
+            margin-top: 30px;
+        }
+
+
+
+        section {
+            height: 100vh;
+            width: 100%;
+
+        }
+
+        #Home {
+            background-color: #000000;
+        }
+
+        #About {
+            background-color: #000000;
+        }
+
+        #Service {
+            background-color: #000000;
+        }
+
+        #News {
+            background-color: #000000;
+        }
+
+        #Contact {
+            background-color: #000000;
+        }
+
+        div.about {
+            padding: 150px 0px;
+        }
+
+        div.main {
+            padding: 0px 40px;
+        }
+
+        div.top {
+            padding: 0px 15px;
+        }
+
+        h1.about {
+            font-size: 35px;
+            color: white;
+        }
+
+        span.subtitle {
+            font-size: 14px;
+            color: #66b95c;
+            margin-bottom: 0;
+        }
+
+        h3.name {
+            line-height: 1.4;
+            padding-bottom: 20px;
+            color: white;
+        }
+
+        div.inner {
+            display: flex;
+        }
+
+        div.info {
+            /* font-size: 20px; */
+            padding-left: 94px;
+        }
+
+        div.content {
+            line-height: 2;
+        }
+
+        p.discription {
+            line-height: 2;
+            letter-spacing: 1px;
+            font-size: 16px;
+            color: white;
+        }
+
+        span.name {
+            color: #66b95c;
+        }
+
+        div.list {
+            display: flex;
+        }
+
+        div.icon {
+            color: #66b95c;
+            display: block;
+            width: 17px;
+            height: 17px;
+            margin-right: 10px;
+        }
+
+        span.label {
+            min-width: 85px;
+            display: inline-block;
+            margin-right: 10px;
+            font-weight: 500;
+            font-size: 18px;
+            color: white;
+        }
+
+        a.link {
+            font-size: 18px;
+            color: white;
+        }
+
+        div.contact {
+            padding: 150px 0px;
+        }
+
+        div.maincontact {
+            padding: 0 40px;
+        }
+
+        p.contactdescription {
+            font-size: 16px;
+            line-height: 2;
+            letter-spacing: .8px;
+            font-weight: 400;
+            margin-top: 75px;
+            color: white;
+        }
+
+        div.cn1 {
+            margin-top: 30px;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        input{
+            background: #000;
+            border: 1px solid hsla(0,0%,100%,.15);
+            /* background: #fff; */
+            border-radius: 5px;
+            height: 50px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: 14px;
+            color: #63696a;
+            width: 100%;
+            /* border: 1px solid #eee; */
+            transition: .3s;
+            outline: none;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            line-height: 1.714;
+            position: absolute;
+            left: 15px;
+            top: 13px;
+            background: #000;
+            color: #929292;
+            padding: 0 5px;
+            transition: all .3s cubic-bezier(.645,.045,.355,1) 0s;
+        }
+
+        div.cn1{
+            float: left;
+            width: 450px;
+        }
+
+        div.cn2{
+            float: right;
+            padding-left: 100px;
+            line-height: 2;
+            text-decoration: none;
+            margin-top: 30px!important;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        img.nichay{
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+
+        img.uperr{
+            position: absolute;
+            top: 37%;
+            left: 43%;
+        }
+        p.flooo{
+            position: absolute;
+            top: 65%;
+            left: 36%;
+            color: white;
+            font-size: xxx-large;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <div class="container">
+                <a href="#Home"><img src="main.png" alt="" width="90px" height="85px"><br></a>
+                <a class="under" href="#Home">Error</a>
+            </div>
+        </div>
+        <div class="buttons">
+            <ul class="listmenu">
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <!-- <li><a href="#Service">Services</a></li>
+                <li><a href="#News">News</a></li> -->
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="social">
+
+        </div>
+    </div>
+    <div class="pages">
+        <div class="container">
+            <div class="section">
+                <section id="Home">
+                    <img class="nichay" src="https://cdn.pixabay.com/photo/2018/06/17/08/40/hacker-3480124_960_720.jpg" alt=""
+                        height="100%" width="100%">
+                    <img class="uperr" src="main.png" height="200px" width="200px" alt="">
+                    <p class="flooo">I am a Programmer</p>
+                </section>
+                <section id="About">
+                    <div class="about">
+                        <div class="main">
+                            <div class="top">
+                                <div class="text">
+                                    <span class="subtitle">
+                                        BIOGRAPHY
+                                    </span>
+                                    <h1 class="about">
+                                        ABOUT ME
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="inner">
+                                <div class="box1">
+                                    <div class="pic">
+                                        <img src="https://images.unsplash.com/photo-1592772874383-d08932d29db7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8aGFja2VyfGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80"
+                                            alt="" height="420px" width="360px">
+                                    </div>
+                                </div>
+                                <div class="box2">
+                                    <div class="info">
+                                        <div class="content">
+                                            <h3 class="name">
+                                                I'M QAMMAR HUSSAIN AND <br><span class="programer">Programer</span>
+                                            </h3>
+                                            <p class="discription">
+                                                Hi! My name is <span class="name">Qammar Hussain</span>. I am a Web
+                                                Developer, and I'm very passionate and dedicated to my work. With 20
+                                                years experience as a professional Web developer, I have acquired the
+                                                skills and knowledge necessary to make your project a success.
+                                            </p>
+                                            <ul class="data">
+                                                <div class="list">
+                                                    <div class="icon">
+                                                        <svg stroke="currentColor" fill="none" stroke-width="2"
+                                                            viewBox="0 0 24 24" stroke-linecap="round"
+                                                            stroke-linejoin="round" height="1em" width="1em"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                                                            <rect x="2" y="7" width="20" height="5"></rect>
+                                                            <line x1="12" y1="22" x2="12" y2="7"></line>
+                                                            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z">
+                                                            </path>
+                                                            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="label">Birthday:</span>
+                                                    <a class="link">18.07.2001</a>
+                                                </div>
+                                                <div class="list">
+                                                    <div class="icon">
+                                                        <svg stroke="currentColor" fill="none" stroke-width="2"
+                                                            viewBox="0 0 24 24" stroke-linecap="round"
+                                                            stroke-linejoin="round" height="1em" width="1em"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
+                                                            </path>
+                                                            <circle cx="12" cy="10" r="3"></circle>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="label">Location:</span>
+                                                    <a class="link">Mumtazabad, Multan,PK</a>
+                                                </div>
+                                                <div class="list">
+                                                    <div class="icon">
+                                                        <svg stroke="currentColor" fill="none" stroke-width="2"
+                                                            viewBox="0 0 24 24" stroke-linecap="round"
+                                                            stroke-linejoin="round" height="1em" width="1em"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="label">Study:</span>
+                                                    <a class="link">University of Multan</a>
+                                                </div>
+                                                <div class="list">
+                                                    <div class="icon">
+                                                        <svg stroke="currentColor" fill="none" stroke-width="2"
+                                                            viewBox="0 0 24 24" stroke-linecap="round"
+                                                            stroke-linejoin="round" height="1em" width="1em"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                            </path>
+                                                            <polyline points="22,6 12,13 2,6"></polyline>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="label">Mail:</span>
+                                                    <a class="link">error@gmail.com</a>
+                                                </div>
+                                                <div class="list">
+                                                    <div class="icon">
+                                                        <svg stroke="currentColor" fill="none" stroke-width="2"
+                                                            viewBox="0 0 24 24" stroke-linecap="round"
+                                                            stroke-linejoin="round" height="1em" width="1em"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2">
+                                                            </rect>
+                                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="label">Age:</span>
+                                                    <a class="link">19</a>
+                                                </div>
+                                                <div class="list">
+                                                    <div class="icon">
+                                                        <svg stroke="currentColor" fill="none" stroke-width="2"
+                                                            viewBox="0 0 24 24" stroke-linecap="round"
+                                                            stroke-linejoin="round" height="1em" width="1em"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                                            <path
+                                                                d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="label">Degree:</span>
+                                                    <a class="link">None</a>
+                                                </div>
+                                                <div class="list">
+                                                    <div class="icon">
+                                                        <svg stroke="currentColor" fill="none" stroke-width="2"
+                                                            viewBox="0 0 24 24" stroke-linecap="round"
+                                                            stroke-linejoin="round" height="1em" width="1em"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <polyline points="16 2 16 8 22 8"></polyline>
+                                                            <line x1="23" y1="1" x2="16" y2="8"></line>
+                                                            <path
+                                                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="label">Phone:</span>
+                                                    <a class="link">+92 3465591567</a>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- <section id="Service">Third</section>
+                <section id="News">fourth</section> -->
+                <section id="Contact">
+                    <div class="contact">
+                        <div class="maincontact">
+                            <div class="top">
+                                <div class="text">
+                                    <span class="subtitle">
+                                        CONTACT
+                                    </span>
+                                    <h1 class="about">
+                                        GET IN TOUCH
+                                    </h1>
+                                    <p class="contactdescription">
+                                        Please fill out the form on this section to contact with me. Or call <br>
+                                        between 9:00 a.m. and 8:00 p.m. ET, Monday through Friday
+                                    </p>
+                                </div>
+                                <div class="iner">
+                                    <div class="cn1">
+                                        <form action="">
+                                            <div class="form-group">
+                                                <input type="text" name="name" id="name">
+                                                <label for="name">Full Name</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="name" id="name">
+                                                <label for="name">Enter Your Name</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="name" id="name">
+                                                <label for="name">Subject</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="name" id="name">
+                                                <label for="name">Write Your Message Here</label>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="cn2">
+                                        <div class="cvfo">
+                                            <ul class="cn2d">
+                                                <div class="list">
+                                                    <div class="icon">
+                                                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                                                            stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                                            <circle cx="12" cy="10" r="3"></circle>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="label">Location:</span>
+                                                    <a class="link" href="#labelvalue">Pakistan</a>
+                                                </div>
+                                                <div class="list">
+                                                    <div class="icon">
+                                                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                                                            stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="label">Phone:</span>
+                                                    <a class="link" href="#labelvalue">+923465591567</a>
+                                                </div>
+                                                <div class="list">
+                                                    <div class="icon">
+                                                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                                                            stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <circle cx="12" cy="12" r="10"></circle>
+                                                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                                                            <path
+                                                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="label">Website:</span>
+                                                    <a class="link" href="#labelvalue">Error.com</a>
+                                                </div>
+                                                <div class="list">
+                                                    <div class="icon">
+                                                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                                                            stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="label">Twitter:</span>
+                                                    <a class="link" href="#labelvalue">@errorTwitter</a>
+                                                </div>
+                                                <div class="list">
+                                                    <div class="icon">
+                                                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                                                            stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="label">Facebook:</span>
+                                                    <a class="link" href="#labelvalue">@errorFacebook</a>
+                                                </div>
+                                                <div class="list">
+                                                    <div class="icon">
+                                                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                                                            stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                            <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="label">Instagram:</span>
+                                                    <a class="link"href="#labelvalue">@errorInstagram</a>
+                                                </div>
+                                                <div class="list">
+                                                    <div class="icon">
+                                                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                                                            stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <polyline points="16 2 16 8 22 8"></polyline>
+                                                            <line x1="23" y1="1" x2="16" y2="8"></line>
+                                                            <path
+                                                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="label">Whatsapp:</span>
+                                                    <a class="link" href="#labelvalue">@errorwWhatsapp</a>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
